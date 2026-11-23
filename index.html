@@ -6,7 +6,7 @@
   <title>Inscription — Atelier Création de Parfum | Kitoko Ladies</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --burgundy: #3D0C1E;
@@ -19,31 +19,18 @@
       --border: #E4DCD8;
       --error: #B91C1C;
       --error-bg: #FEF2F2;
-      --shadow: 0 18px 45px rgba(61, 12, 30, 0.08);
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--cream);
+      font-family: 'Montserrat', sans-serif;
+      background: var(--cream);
       color: var(--ink);
       line-height: 1.6;
       min-height: 100vh;
       overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
     }
-
     .top-banner {
-      background-color: var(--burgundy);
+      background: var(--burgundy);
       color: var(--white);
       text-align: center;
       padding: 10px 16px;
@@ -52,36 +39,29 @@
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
-
     .page-wrapper {
-      max-width: 1120px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: clamp(20px, 4vw, 48px) clamp(16px, 4vw, 32px) 64px;
       display: grid;
       grid-template-columns: 1fr;
-      gap: clamp(24px, 4vw, 44px);
+      gap: clamp(24px, 4vw, 42px);
       align-items: start;
     }
-
     @media (min-width: 920px) {
-      .page-wrapper {
-        grid-template-columns: 0.95fr 1.05fr;
-      }
-      .poster-column {
-        position: sticky;
-        top: 28px;
-      }
+      .page-wrapper { grid-template-columns: 0.95fr 1.05fr; }
+      .poster-column { position: sticky; top: 28px; }
     }
-
-    .poster-card {
+    .poster-card, .form-card {
       background: var(--white);
       border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      padding: clamp(28px, 5vw, 48px) clamp(22px, 4vw, 40px);
+      box-shadow: 0 18px 45px rgba(61, 12, 30, 0.08);
+    }
+    .poster-card {
+      padding: clamp(28px, 5vw, 46px) clamp(22px, 4vw, 38px);
       text-align: center;
       position: relative;
     }
-
     .poster-card::before {
       content: "";
       position: absolute;
@@ -89,7 +69,6 @@
       border: 1px solid rgba(61, 12, 30, 0.14);
       pointer-events: none;
     }
-
     .brand-tag {
       display: inline-block;
       font-size: 0.7rem;
@@ -97,173 +76,91 @@
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--burgundy);
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
-
     .poster-title {
       font-family: 'Playfair Display', Georgia, serif;
       color: var(--burgundy);
       text-transform: uppercase;
       line-height: 1.06;
-      letter-spacing: 0.02em;
     }
-
-    .poster-title .line-1 {
-      display: block;
-      font-size: clamp(1.85rem, 4.5vw, 2.55rem);
-      font-weight: 600;
-    }
-
-    .poster-title .line-2 {
-      display: block;
-      font-size: clamp(1.65rem, 4vw, 2.3rem);
-      font-weight: 600;
-      margin-top: 4px;
-    }
-
+    .poster-title .line-1 { display: block; font-size: clamp(1.85rem, 4.5vw, 2.5rem); }
+    .poster-title .line-2 { display: block; font-size: clamp(1.65rem, 4vw, 2.25rem); margin-top: 4px; }
     .poster-title .line-3 {
       display: block;
-      font-size: clamp(2.85rem, 7vw, 4.1rem);
+      font-size: clamp(2.85rem, 7vw, 4rem);
       font-weight: 700;
       letter-spacing: 0.04em;
       margin: 6px 0 10px;
     }
-
     .poster-subtitle {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+      font-size: clamp(0.95rem, 2.2vw, 1.12rem);
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--burgundy);
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
-
     .poster-meta {
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
-      padding: 16px 8px;
-      margin-bottom: 22px;
+      padding: 15px 8px;
+      margin-bottom: 20px;
     }
-
     .poster-meta p {
       font-size: 0.82rem;
       font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--ink);
     }
-
-    .poster-meta p + p {
-      margin-top: 4px;
-      font-weight: 400;
-      color: var(--muted);
-    }
-
-    .poster-desc {
-      font-size: 0.9rem;
-      color: var(--muted);
-      max-width: 420px;
-      margin: 0 auto 24px;
-    }
-
+    .poster-meta p + p { margin-top: 4px; font-weight: 400; color: var(--muted); }
+    .poster-desc { font-size: 0.9rem; color: var(--muted); max-width: 420px; margin: 0 auto 22px; }
     .rules-box {
       background: var(--burgundy-tint);
-      padding: 18px 18px;
+      padding: 18px;
       text-align: left;
       border-left: 3px solid var(--burgundy);
     }
-
     .rules-box h2 {
       font-family: 'Playfair Display', serif;
       font-size: 1rem;
       color: var(--burgundy);
       margin-bottom: 10px;
     }
-
-    .rules-list {
-      list-style: none;
-      font-size: 0.84rem;
-      color: var(--ink);
-    }
-
-    .rules-list li {
-      position: relative;
-      padding-left: 22px;
-      margin-bottom: 8px;
-    }
-
-    .rules-list li:last-child {
-      margin-bottom: 0;
-    }
-
+    .rules-list { list-style: none; font-size: 0.84rem; }
+    .rules-list li { position: relative; padding-left: 20px; margin-bottom: 8px; }
+    .rules-list li:last-child { margin-bottom: 0; }
     .rules-list li::before {
       content: "✦";
       position: absolute;
       left: 0;
-      top: 0;
       color: var(--burgundy);
       font-size: 0.8rem;
     }
-
-    .form-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      padding: clamp(24px, 4.5vw, 42px);
-    }
-
-    .form-header {
-      margin-bottom: 26px;
-    }
-
+    .form-card { padding: clamp(24px, 4.5vw, 40px); }
+    .form-header { margin-bottom: 24px; }
     .form-header h1 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: clamp(1.5rem, 3.2vw, 1.95rem);
       color: var(--burgundy);
-      font-weight: 600;
       line-height: 1.25;
       margin-bottom: 8px;
     }
-
-    .form-header p {
-      font-size: 0.88rem;
-      color: var(--muted);
-    }
-
-    .form-group {
-      margin-bottom: 18px;
-    }
-
-    .form-row-2 {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-
-    @media (min-width: 560px) {
-      .form-row-2 {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
+    .form-header p { font-size: 0.88rem; color: var(--muted); }
+    .form-group { margin-bottom: 18px; }
+    .form-row-2 { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    @media (min-width: 560px) { .form-row-2 { grid-template-columns: 1fr 1fr; } }
     label.field-label {
       display: block;
       font-size: 0.78rem;
       font-weight: 600;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--ink);
       margin-bottom: 7px;
     }
-
-    label.field-label span.req {
-      color: var(--burgundy);
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"] {
+    .req { color: var(--burgundy); }
+    input[type="text"], input[type="email"], input[type="tel"] {
       width: 100%;
       min-height: 48px;
       padding: 12px 14px;
@@ -273,30 +170,10 @@
       background: var(--cream);
       border: 1px solid var(--border);
       border-radius: 0;
-      transition: border-color 0.2s ease, background-color 0.2s ease;
     }
-
-    input[type="text"]:focus,
-    input[type="email"]:focus,
-    input[type="tel"]:focus {
-      outline: none;
-      border-color: var(--burgundy);
-      background: var(--white);
-    }
-
-    .scent-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 4px;
-    }
-
-    .scent-option input {
-      position: absolute;
-      opacity: 0;
-      pointer-events: none;
-    }
-
+    input:focus { outline: none; border-color: var(--burgundy); background: var(--white); }
+    .scent-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+    .scent-option input { position: absolute; opacity: 0; pointer-events: none; }
     .scent-option span {
       display: inline-flex;
       align-items: center;
@@ -305,25 +182,16 @@
       font-size: 0.82rem;
       border: 1px solid var(--border);
       background: var(--cream);
-      color: var(--ink);
       cursor: pointer;
-      transition: all 0.2s ease;
       user-select: none;
     }
-
     .scent-option input:checked + span {
       background: var(--burgundy);
       border-color: var(--burgundy);
       color: var(--white);
       font-weight: 500;
     }
-
-    .conditions-section {
-      margin-top: 24px;
-      padding-top: 22px;
-      border-top: 1px solid var(--border);
-    }
-
+    .conditions-section { margin-top: 22px; padding-top: 20px; border-top: 1px solid var(--border); }
     .conditions-title {
       font-size: 0.8rem;
       font-weight: 600;
@@ -332,7 +200,6 @@
       color: var(--burgundy);
       margin-bottom: 12px;
     }
-
     .checkbox-item {
       display: flex;
       align-items: flex-start;
@@ -343,13 +210,8 @@
       background: var(--cream);
       border: 1px solid var(--border);
       cursor: pointer;
-      transition: border-color 0.2s ease, background-color 0.2s ease;
     }
-
-    .checkbox-item:hover {
-      border-color: var(--burgundy);
-    }
-
+    .checkbox-item:hover { border-color: var(--burgundy); }
     .checkbox-item input[type="checkbox"] {
       appearance: none;
       -webkit-appearance: none;
@@ -363,27 +225,17 @@
       display: grid;
       place-content: center;
     }
-
     .checkbox-item input[type="checkbox"]::before {
       content: "";
       width: 12px;
       height: 12px;
       transform: scale(0);
-      transition: transform 0.15s ease-in-out;
-      background-color: var(--burgundy);
+      transition: transform 0.15s ease;
+      background: var(--burgundy);
       clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
     }
-
-    .checkbox-item input[type="checkbox"]:checked::before {
-      transform: scale(1);
-    }
-
-    .checkbox-item span {
-      font-size: 0.85rem;
-      color: var(--ink);
-      line-height: 1.45;
-    }
-
+    .checkbox-item input[type="checkbox"]:checked::before { transform: scale(1); }
+    .checkbox-item span { font-size: 0.85rem; line-height: 1.45; }
     .alert-box {
       display: none;
       padding: 13px 15px;
@@ -393,11 +245,7 @@
       color: var(--error);
       font-size: 0.84rem;
     }
-
-    .alert-box.visible {
-      display: block;
-    }
-
+    .alert-box.visible { display: block; }
     .btn-submit {
       width: 100%;
       min-height: 54px;
@@ -412,37 +260,12 @@
       letter-spacing: 0.16em;
       text-transform: uppercase;
       cursor: pointer;
-      transition: background-color 0.25s ease, transform 0.1s ease;
     }
-
-    .btn-submit:hover:not(:disabled) {
-      background: var(--burgundy-light);
-    }
-
-    .btn-submit:active:not(:disabled) {
-      transform: translateY(1px);
-    }
-
-    .btn-submit:disabled {
-      opacity: 0.65;
-      cursor: not-allowed;
-    }
-
-    .privacy-note {
-      margin-top: 12px;
-      font-size: 0.75rem;
-      color: var(--muted);
-      text-align: center;
-    }
-
-    .pass-view {
-      display: none;
-    }
-
-    .pass-view.active {
-      display: block;
-    }
-
+    .btn-submit:hover:not(:disabled) { background: var(--burgundy-light); }
+    .btn-submit:disabled { opacity: 0.65; cursor: not-allowed; }
+    .privacy-note { margin-top: 12px; font-size: 0.75rem; color: var(--muted); text-align: center; }
+    .pass-view { display: none; }
+    .pass-view.active { display: block; }
     .pass-badge {
       display: inline-block;
       padding: 6px 14px;
@@ -454,14 +277,12 @@
       text-transform: uppercase;
       margin-bottom: 14px;
     }
-
     .pass-ticket {
       border: 1.5px dashed var(--burgundy);
       background: var(--cream);
       padding: 22px 20px;
       margin: 20px 0;
     }
-
     .pass-ref {
       font-family: 'Playfair Display', serif;
       font-size: 1.35rem;
@@ -470,12 +291,7 @@
       letter-spacing: 0.06em;
       margin-bottom: 14px;
     }
-
-    .pass-details {
-      list-style: none;
-      font-size: 0.86rem;
-    }
-
+    .pass-details { list-style: none; font-size: 0.86rem; }
     .pass-details li {
       display: flex;
       justify-content: space-between;
@@ -483,23 +299,9 @@
       padding: 8px 0;
       border-bottom: 1px solid var(--border);
     }
-
-    .pass-details li:last-child {
-      border-bottom: none;
-    }
-
-    .pass-details strong {
-      color: var(--muted);
-      font-weight: 500;
-    }
-
-    .pass-details span {
-      font-weight: 600;
-      color: var(--ink);
-      text-align: right;
-      word-break: break-word;
-    }
-
+    .pass-details li:last-child { border-bottom: none; }
+    .pass-details strong { color: var(--muted); font-weight: 500; }
+    .pass-details span { font-weight: 600; text-align: right; word-break: break-word; }
     .btn-secondary {
       width: 100%;
       min-height: 48px;
@@ -515,17 +317,11 @@
       text-transform: uppercase;
       cursor: pointer;
     }
-
-    .btn-secondary:hover {
-      background: var(--burgundy-tint);
-    }
+    .btn-secondary:hover { background: var(--burgundy-tint); }
   </style>
 </head>
 <body>
-
-  <div class="top-banner">
-    Édition Exclusive • 10 Places Uniquement • Kitoko Ladies
-  </div>
+  <div class="top-banner">Édition Exclusive • 10 Places Uniquement • Kitoko Ladies</div>
 
   <main class="page-wrapper">
     <section class="poster-column" aria-label="Présentation de l'événement">
@@ -537,16 +333,13 @@
           <span class="line-3">Kitoko</span>
         </h2>
         <p class="poster-subtitle">Atelier Création de Parfum</p>
-
         <div class="poster-meta">
           <p>Seulement 10 Participantes</p>
           <p>Le 26.11.2026 chez Kitoko Ladies</p>
         </div>
-
         <p class="poster-desc">
           Compose ta signature olfactive sur-mesure lors d'un moment privé et sensoriel au salon. Les <strong>10 premières inscrites</strong> remplissant l'ensemble des conditions recevront leur invitation officielle.
         </p>
-
         <div class="rules-box">
           <h2>Conditions obligatoires</h2>
           <ul class="rules-list">
@@ -579,7 +372,6 @@
               <label class="field-label" for="telephone">Téléphone (WhatsApp / SMS) <span class="req">*</span></label>
               <input type="tel" id="telephone" name="telephone" placeholder="06 12 34 56 78" required autocomplete="tel" />
             </div>
-
             <div class="form-group">
               <label class="field-label" for="email">Adresse E-mail <span class="req">*</span></label>
               <input type="email" id="email" name="email" placeholder="ton.email@exemple.com" required autocomplete="email" />
@@ -591,7 +383,6 @@
               <label class="field-label" for="instagram">Pseudo Instagram <span class="req">*</span></label>
               <input type="text" id="instagram" name="instagram" placeholder="@tonpseudo" required />
             </div>
-
             <div class="form-group">
               <label class="field-label" for="tiktok">Pseudo TikTok <span class="req">*</span></label>
               <input type="text" id="tiktok" name="tiktok" placeholder="@tonpseudo" required />
@@ -601,60 +392,24 @@
           <div class="form-group">
             <label class="field-label">Tes notes olfactives préférées (facultatif)</label>
             <div class="scent-grid">
-              <label class="scent-option">
-                <input type="checkbox" name="notes" value="Vanille & Gourmand" />
-                <span>Vanille & Gourmand</span>
-              </label>
-              <label class="scent-option">
-                <input type="checkbox" name="notes" value="Floral" />
-                <span>Floral</span>
-              </label>
-              <label class="scent-option">
-                <input type="checkbox" name="notes" value="Fruité" />
-                <span>Fruité</span>
-              </label>
-              <label class="scent-option">
-                <input type="checkbox" name="notes" value="Boisé & Ambré" />
-                <span>Boisé & Ambré</span>
-              </label>
-              <label class="scent-option">
-                <input type="checkbox" name="notes" value="Frais & Musqué" />
-                <span>Frais & Musqué</span>
-              </label>
+              <label class="scent-option"><input type="checkbox" name="notes" value="Vanille & Gourmand" /><span>Vanille & Gourmand</span></label>
+              <label class="scent-option"><input type="checkbox" name="notes" value="Floral" /><span>Floral</span></label>
+              <label class="scent-option"><input type="checkbox" name="notes" value="Fruité" /><span>Fruité</span></label>
+              <label class="scent-option"><input type="checkbox" name="notes" value="Boisé & Ambré" /><span>Boisé & Ambré</span></label>
+              <label class="scent-option"><input type="checkbox" name="notes" value="Frais & Musqué" /><span>Frais & Musqué</span></label>
             </div>
           </div>
 
           <div class="conditions-section">
             <p class="conditions-title">Validation des 4 conditions obligatoires <span class="req">*</span></p>
-
-            <label class="checkbox-item">
-              <input type="checkbox" class="cond-check" required />
-              <span>Je suis abonnée au compte <strong>Instagram</strong> de Kitoko Ladies</span>
-            </label>
-
-            <label class="checkbox-item">
-              <input type="checkbox" class="cond-check" required />
-              <span>Je suis abonnée au compte <strong>TikTok</strong> de Kitoko Ladies</span>
-            </label>
-
-            <label class="checkbox-item">
-              <input type="checkbox" class="cond-check" required />
-              <span>J'ai <strong>tagué 3 amies</strong> en commentaire sous le post de l'atelier</span>
-            </label>
-
-            <label class="checkbox-item">
-              <input type="checkbox" class="cond-check" required />
-              <span>J'ai <strong>reposté l'affiche en story</strong> en identifiant Kitoko Ladies</span>
-            </label>
+            <label class="checkbox-item"><input type="checkbox" class="cond-check" required /><span>Je suis abonnée au compte <strong>Instagram</strong> de Kitoko Ladies</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="cond-check" required /><span>Je suis abonnée au compte <strong>TikTok</strong> de Kitoko Ladies</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="cond-check" required /><span>J'ai <strong>tagué 3 amies</strong> en commentaire sous le post de l'atelier</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="cond-check" required /><span>J'ai <strong>reposté l'affiche en story</strong> en identifiant Kitoko Ladies</span></label>
           </div>
 
-          <button type="submit" class="btn-submit" id="submitBtn">
-            Valider mon inscription
-          </button>
-
-          <p class="privacy-note">
-            Une vérification manuelle des abonnements, tags et reposts est effectuée pour valider les 10 places.
-          </p>
+          <button type="submit" class="btn-submit" id="submitBtn">Valider mon inscription</button>
+          <p class="privacy-note">Une vérification manuelle des abonnements, tags et reposts est effectuée pour valider les 10 places.</p>
         </form>
       </div>
 
@@ -664,7 +419,6 @@
           <h1>Pass de Pré-inscription</h1>
           <p>Ton horodatage a bien été transmis à l'équipe <strong>Kitoko Ladies</strong>. Si tu fais partie des 10 premières inscrites ayant rempli toutes les conditions, tu recevras très vite ta confirmation par message !</p>
         </div>
-
         <div class="pass-ticket">
           <div class="pass-ref" id="passRef">KTK-2611-0000</div>
           <ul class="pass-details">
@@ -675,10 +429,7 @@
             <li><strong>Événement</strong> <span>26.11.2026 • Kitoko Ladies</span></li>
           </ul>
         </div>
-
-        <button type="button" class="btn-secondary" id="resetBtn">
-          Effectuer une nouvelle inscription
-        </button>
+        <button type="button" class="btn-secondary" id="resetBtn">Effectuer une nouvelle inscription</button>
       </div>
     </section>
   </main>
@@ -687,9 +438,111 @@
     (function () {
       const STORAGE_KEY = 'kitoko_parfum_pass_2026';
       const DESTINATION_EMAIL = 'kitoko.ladies@gmail.com';
-
       const formView = document.getElementById('formView');
       const passView = document.getElementById('passView');
       const form = document.getElementById('kitokoForm');
       const errorBox = document.getElementById('errorBox');
-      const submitBtn = document.
+      const submitBtn = document.getElementById('submitBtn');
+      const resetBtn = document.getElementById('resetBtn');
+
+      function showError(msg) {
+        errorBox.innerHTML = msg;
+        errorBox.classList.add('visible');
+        errorBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+
+      function renderPass(data) {
+        document.getElementById('passRef').textContent = data.reference;
+        document.getElementById('passNom').textContent = data.nom;
+        document.getElementById('passInsta').textContent = data.instagram;
+        document.getElementById('passTiktok').textContent = data.tiktok;
+        document.getElementById('passDate').textContent = data.horodatage;
+        formView.style.display = 'none';
+        passView.classList.add('active');
+      }
+
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) renderPass(JSON.parse(saved));
+      } catch (e) {}
+
+      resetBtn.addEventListener('click', function () {
+        try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+        form.reset();
+        errorBox.classList.remove('visible');
+        passView.classList.remove('active');
+        formView.style.display = 'block';
+      });
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        errorBox.classList.remove('visible');
+
+        const nom = document.getElementById('nom').value.trim();
+        const telephone = document.getElementById('telephone').value.trim();
+        const email = document.getElementById('email').value.trim();
+        let instagram = document.getElementById('instagram').value.trim();
+        let tiktok = document.getElementById('tiktok').value.trim();
+
+        if (!nom || !telephone || !email || !instagram || !tiktok) {
+          showError('Merci de remplir tous les champs obligatoires avant de valider.');
+          return;
+        }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          showError('Merci de renseigner une adresse e-mail valide.');
+          return;
+        }
+        if (!Array.from(document.querySelectorAll('.cond-check')).every(cb => cb.checked)) {
+          showError('Tu dois cocher les <strong>4 conditions obligatoires</strong> pour participer à la sélection des 10 premières inscrites.');
+          return;
+        }
+
+        if (!instagram.startsWith('@')) instagram = '@' + instagram;
+        if (!tiktok.startsWith('@')) tiktok = '@' + tiktok;
+
+        const notes = Array.from(document.querySelectorAll('input[name="notes"]:checked')).map(el => el.value).join(', ') || 'Non précisé';
+        const horodatage = new Date().toLocaleString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' });
+        const reference = 'KTK-2611-' + Math.floor(1000 + Math.random() * 9000);
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Envoi en cours...';
+
+        try {
+          const response = await fetch('https://formsubmit.co/ajax/' + DESTINATION_EMAIL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({
+              _subject: 'Nouvelle inscription Atelier Parfum — ' + nom,
+              _template: 'table',
+              _captcha: 'false',
+              Reference_Pass: reference,
+              Horodatage_Exact: horodatage,
+              Nom_et_Prenom: nom,
+              Telephone: telephone,
+              Email: email,
+              Pseudo_Instagram: instagram,
+              Pseudo_TikTok: tiktok,
+              Preferences_Olfactives: notes,
+              Conditions_Validees: 'Oui (4/4)'
+            })
+          });
+          const result = await response.json();
+          if (response.ok && (result.success === 'true' || result.success === true)) {
+            const passData = { reference, nom, instagram, tiktok, horodatage };
+            try { localStorage.setItem(STORAGE_KEY, JSON.stringify(passData)); } catch (err) {}
+            renderPass(passData);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          } else {
+            throw new Error();
+          }
+        } catch (err) {
+          showError('Erreur de connexion lors de l’envoi. Réessaie dans un instant ou écris à <strong>' + DESTINATION_EMAIL + '</strong>.');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Valider mon inscription';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
