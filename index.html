@@ -19,7 +19,6 @@
       --border: #E4DCD8;
       --error: #B91C1C;
       --error-bg: #FEF2F2;
-      --success: #166534;
       --shadow: 0 18px 45px rgba(61, 12, 30, 0.08);
     }
 
@@ -43,7 +42,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Barre supérieure */
     .top-banner {
       background-color: var(--burgundy);
       color: var(--white);
@@ -55,7 +53,6 @@
       text-transform: uppercase;
     }
 
-    /* Conteneur principal responsive */
     .page-wrapper {
       max-width: 1120px;
       margin: 0 auto;
@@ -76,7 +73,6 @@
       }
     }
 
-    /* Carte Affiche Éditoriale (Colonne Gauche) */
     .poster-card {
       background: var(--white);
       border: 1px solid var(--border);
@@ -105,4 +101,595 @@
     }
 
     .poster-title {
-      font-family
+      font-family: 'Playfair Display', Georgia, serif;
+      color: var(--burgundy);
+      text-transform: uppercase;
+      line-height: 1.06;
+      letter-spacing: 0.02em;
+    }
+
+    .poster-title .line-1 {
+      display: block;
+      font-size: clamp(1.85rem, 4.5vw, 2.55rem);
+      font-weight: 600;
+    }
+
+    .poster-title .line-2 {
+      display: block;
+      font-size: clamp(1.65rem, 4vw, 2.3rem);
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .poster-title .line-3 {
+      display: block;
+      font-size: clamp(2.85rem, 7vw, 4.1rem);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin: 6px 0 10px;
+    }
+
+    .poster-subtitle {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--burgundy);
+      margin-bottom: 24px;
+    }
+
+    .poster-meta {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 8px;
+      margin-bottom: 22px;
+    }
+
+    .poster-meta p {
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .poster-meta p + p {
+      margin-top: 4px;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    .poster-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 420px;
+      margin: 0 auto 24px;
+    }
+
+    .rules-box {
+      background: var(--burgundy-tint);
+      padding: 18px 18px;
+      text-align: left;
+      border-left: 3px solid var(--burgundy);
+    }
+
+    .rules-box h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--burgundy);
+      margin-bottom: 10px;
+    }
+
+    .rules-list {
+      list-style: none;
+      font-size: 0.84rem;
+      color: var(--ink);
+    }
+
+    .rules-list li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 8px;
+    }
+
+    .rules-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .rules-list li::before {
+      content: "✦";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--burgundy);
+      font-size: 0.8rem;
+    }
+
+    .form-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      padding: clamp(24px, 4.5vw, 42px);
+    }
+
+    .form-header {
+      margin-bottom: 26px;
+    }
+
+    .form-header h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.5rem, 3.2vw, 1.95rem);
+      color: var(--burgundy);
+      font-weight: 600;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .form-header p {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media (min-width: 560px) {
+      .form-row-2 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    label.field-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 7px;
+    }
+
+    label.field-label span.req {
+      color: var(--burgundy);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+      width: 100%;
+      min-height: 48px;
+      padding: 12px 14px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      color: var(--ink);
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 0;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus {
+      outline: none;
+      border-color: var(--burgundy);
+      background: var(--white);
+    }
+
+    .scent-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .scent-option input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .scent-option span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 8px 14px;
+      font-size: 0.82rem;
+      border: 1px solid var(--border);
+      background: var(--cream);
+      color: var(--ink);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .scent-option input:checked + span {
+      background: var(--burgundy);
+      border-color: var(--burgundy);
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    .conditions-section {
+      margin-top: 24px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+    }
+
+    .conditions-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--burgundy);
+      margin-bottom: 12px;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      min-height: 48px;
+      padding: 11px 12px;
+      margin-bottom: 10px;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+
+    .checkbox-item:hover {
+      border-color: var(--burgundy);
+    }
+
+    .checkbox-item input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      margin-top: 1px;
+      border: 1.5px solid var(--burgundy);
+      background: var(--white);
+      cursor: pointer;
+      display: grid;
+      place-content: center;
+    }
+
+    .checkbox-item input[type="checkbox"]::before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      transform: scale(0);
+      transition: transform 0.15s ease-in-out;
+      background-color: var(--burgundy);
+      clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    }
+
+    .checkbox-item input[type="checkbox"]:checked::before {
+      transform: scale(1);
+    }
+
+    .checkbox-item span {
+      font-size: 0.85rem;
+      color: var(--ink);
+      line-height: 1.45;
+    }
+
+    .alert-box {
+      display: none;
+      padding: 13px 15px;
+      margin-bottom: 18px;
+      background: var(--error-bg);
+      border-left: 3px solid var(--error);
+      color: var(--error);
+      font-size: 0.84rem;
+    }
+
+    .alert-box.visible {
+      display: block;
+    }
+
+    .btn-submit {
+      width: 100%;
+      min-height: 54px;
+      margin-top: 10px;
+      padding: 15px 24px;
+      background: var(--burgundy);
+      color: var(--white);
+      border: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.84rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background-color 0.25s ease, transform 0.1s ease;
+    }
+
+    .btn-submit:hover:not(:disabled) {
+      background: var(--burgundy-light);
+    }
+
+    .btn-submit:active:not(:disabled) {
+      transform: translateY(1px);
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+
+    .privacy-note {
+      margin-top: 12px;
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .pass-view {
+      display: none;
+    }
+
+    .pass-view.active {
+      display: block;
+    }
+
+    .pass-badge {
+      display: inline-block;
+      padding: 6px 14px;
+      background: var(--burgundy-tint);
+      color: var(--burgundy);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .pass-ticket {
+      border: 1.5px dashed var(--burgundy);
+      background: var(--cream);
+      padding: 22px 20px;
+      margin: 20px 0;
+    }
+
+    .pass-ref {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--burgundy);
+      letter-spacing: 0.06em;
+      margin-bottom: 14px;
+    }
+
+    .pass-details {
+      list-style: none;
+      font-size: 0.86rem;
+    }
+
+    .pass-details li {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pass-details li:last-child {
+      border-bottom: none;
+    }
+
+    .pass-details strong {
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .pass-details span {
+      font-weight: 600;
+      color: var(--ink);
+      text-align: right;
+      word-break: break-word;
+    }
+
+    .btn-secondary {
+      width: 100%;
+      min-height: 48px;
+      margin-top: 14px;
+      padding: 12px 20px;
+      background: transparent;
+      color: var(--burgundy);
+      border: 1px solid var(--burgundy);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .btn-secondary:hover {
+      background: var(--burgundy-tint);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-banner">
+    Édition Exclusive • 10 Places Uniquement • Kitoko Ladies
+  </div>
+
+  <main class="page-wrapper">
+    <section class="poster-column" aria-label="Présentation de l'événement">
+      <div class="poster-card">
+        <span class="brand-tag">Kitoko Ladies Présente</span>
+        <h2 class="poster-title">
+          <span class="line-1">Ton Parfum</span>
+          <span class="line-2">Pour Sentir</span>
+          <span class="line-3">Kitoko</span>
+        </h2>
+        <p class="poster-subtitle">Atelier Création de Parfum</p>
+
+        <div class="poster-meta">
+          <p>Seulement 10 Participantes</p>
+          <p>Le 26.11.2026 chez Kitoko Ladies</p>
+        </div>
+
+        <p class="poster-desc">
+          Compose ta signature olfactive sur-mesure lors d'un moment privé et sensoriel au salon. Les <strong>10 premières inscrites</strong> remplissant l'ensemble des conditions recevront leur invitation officielle.
+        </p>
+
+        <div class="rules-box">
+          <h2>Conditions obligatoires</h2>
+          <ul class="rules-list">
+            <li>Être abonnée à notre compte <strong>Instagram</strong></li>
+            <li>Être abonnée à notre compte <strong>TikTok</strong></li>
+            <li>Avoir <strong>tagué 3 amies</strong> sous le post de l'atelier</li>
+            <li>Avoir <strong>reposté l'affiche en story</strong> en nous identifiant</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-column">
+      <div class="form-card" id="formView">
+        <div class="form-header">
+          <h1>Réserver ma place</h1>
+          <p>Remplis tes coordonnées et valide les 4 conditions pour enregistrer ton horodatage d'arrivée.</p>
+        </div>
+
+        <div class="alert-box" id="errorBox" role="alert"></div>
+
+        <form id="kitokoForm" novalidate>
+          <div class="form-group">
+            <label class="field-label" for="nom">Nom et Prénom <span class="req">*</span></label>
+            <input type="text" id="nom" name="nom" placeholder="Ex : Inès Diallo" required autocomplete="name" />
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="field-label" for="telephone">Téléphone (WhatsApp / SMS) <span class="req">*</span></label>
+              <input type="tel" id="telephone" name="telephone" placeholder="06 12 34 56 78" required autocomplete="tel" />
+            </div>
+
+            <div class="form-group">
+              <label class="field-label" for="email">Adresse E-mail <span class="req">*</span></label>
+              <input type="email" id="email" name="email" placeholder="ton.email@exemple.com" required autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="field-label" for="instagram">Pseudo Instagram <span class="req">*</span></label>
+              <input type="text" id="instagram" name="instagram" placeholder="@tonpseudo" required />
+            </div>
+
+            <div class="form-group">
+              <label class="field-label" for="tiktok">Pseudo TikTok <span class="req">*</span></label>
+              <input type="text" id="tiktok" name="tiktok" placeholder="@tonpseudo" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="field-label">Tes notes olfactives préférées (facultatif)</label>
+            <div class="scent-grid">
+              <label class="scent-option">
+                <input type="checkbox" name="notes" value="Vanille & Gourmand" />
+                <span>Vanille & Gourmand</span>
+              </label>
+              <label class="scent-option">
+                <input type="checkbox" name="notes" value="Floral" />
+                <span>Floral</span>
+              </label>
+              <label class="scent-option">
+                <input type="checkbox" name="notes" value="Fruité" />
+                <span>Fruité</span>
+              </label>
+              <label class="scent-option">
+                <input type="checkbox" name="notes" value="Boisé & Ambré" />
+                <span>Boisé & Ambré</span>
+              </label>
+              <label class="scent-option">
+                <input type="checkbox" name="notes" value="Frais & Musqué" />
+                <span>Frais & Musqué</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="conditions-section">
+            <p class="conditions-title">Validation des 4 conditions obligatoires <span class="req">*</span></p>
+
+            <label class="checkbox-item">
+              <input type="checkbox" class="cond-check" required />
+              <span>Je suis abonnée au compte <strong>Instagram</strong> de Kitoko Ladies</span>
+            </label>
+
+            <label class="checkbox-item">
+              <input type="checkbox" class="cond-check" required />
+              <span>Je suis abonnée au compte <strong>TikTok</strong> de Kitoko Ladies</span>
+            </label>
+
+            <label class="checkbox-item">
+              <input type="checkbox" class="cond-check" required />
+              <span>J'ai <strong>tagué 3 amies</strong> en commentaire sous le post de l'atelier</span>
+            </label>
+
+            <label class="checkbox-item">
+              <input type="checkbox" class="cond-check" required />
+              <span>J'ai <strong>reposté l'affiche en story</strong> en identifiant Kitoko Ladies</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn-submit" id="submitBtn">
+            Valider mon inscription
+          </button>
+
+          <p class="privacy-note">
+            Une vérification manuelle des abonnements, tags et reposts est effectuée pour valider les 10 places.
+          </p>
+        </form>
+      </div>
+
+      <div class="form-card pass-view" id="passView" aria-live="polite">
+        <span class="pass-badge">Demande enregistrée</span>
+        <div class="form-header">
+          <h1>Pass de Pré-inscription</h1>
+          <p>Ton horodatage a bien été transmis à l'équipe <strong>Kitoko Ladies</strong>. Si tu fais partie des 10 premières inscrites ayant rempli toutes les conditions, tu recevras très vite ta confirmation par message !</p>
+        </div>
+
+        <div class="pass-ticket">
+          <div class="pass-ref" id="passRef">KTK-2611-0000</div>
+          <ul class="pass-details">
+            <li><strong>Participante</strong> <span id="passNom">—</span></li>
+            <li><strong>Instagram</strong> <span id="passInsta">—</span></li>
+            <li><strong>TikTok</strong> <span id="passTiktok">—</span></li>
+            <li><strong>Horodatage</strong> <span id="passDate">—</span></li>
+            <li><strong>Événement</strong> <span>26.11.2026 • Kitoko Ladies</span></li>
+          </ul>
+        </div>
+
+        <button type="button" class="btn-secondary" id="resetBtn">
+          Effectuer une nouvelle inscription
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      const STORAGE_KEY = 'kitoko_parfum_pass_2026';
+      const DESTINATION_EMAIL = 'kitoko.ladies@gmail.com';
+
+      const formView = document.getElementById('formView');
+      const passView = document.getElementById('passView');
+      const form = document.getElementById('kitokoForm');
+      const errorBox = document.getElementById('errorBox');
+      const submitBtn = document.
